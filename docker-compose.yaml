@@ -14,7 +14,7 @@ services:
     container_name: acceleration-dv
     build: ./acceleration-dv
     ports:
-      - "3001"
+      - "3001:3001"
     networks:
       - app-node
   

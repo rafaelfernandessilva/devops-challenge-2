@@ -2,12 +2,14 @@ FROM node:erbium-stretch-slim
 
 WORKDIR /app
 
-COPY package.json yarn.lock /app/
+COPY package.json yarn.lock ./
 
-RUN npm install  yarn
 
-COPY . .
+RUN npm install yarn
 
-CMD [ "yarn", "run", "dev","start", "build" ]
+
+COPY . . 
+
+CMD ["yarn", "run", "dev", "start","build", "build:clean"] 
 
 EXPOSE 3000

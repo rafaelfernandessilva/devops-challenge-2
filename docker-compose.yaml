@@ -1,0 +1,40 @@
+version: '3'
+services:
+  acceleration-a:
+    hostname: acceleration-a
+    container_name: acceleration-a
+    build: ./acceleration-a
+    ports:
+      - "3002:3002"
+    networks:
+      - app-node
+  
+  acceleration-dv:
+    hostname: acceleration-dv
+    container_name: acceleration-dv
+    build: ./acceleration-dv
+    ports:
+      - "3001"
+    networks:
+      - app-node
+  
+  
+  acceleration-calc:
+    hostname: acceleration-calc
+    container_name: acceleration-calc
+    build: ./acceleration-calc
+    ports:
+      - "3000:3000"
+    networks:
+      - app-node
+    depends_on:
+      - acceleration-a
+      - acceleration-dv
+
+networks:
+  app-node:
+  
+  
+
+
+

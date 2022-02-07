@@ -8,6 +8,6 @@ RUN npm install yarn
 
 COPY . .
 
-CMD ["yarn", "dev", "start", "build"]
+CMD [ "yarn", "run", "dev","start", "build" ]
 
 EXPOSE 3002
